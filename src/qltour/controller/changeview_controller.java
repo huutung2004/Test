@@ -17,7 +17,7 @@ import qltour.view.TourJPanel;
 import qltour.view.TrangChuJPanel;
 
 public class changeview_controller extends DanhMucBean {
-
+private ArrayList<DanhMucBean> danhMuc = null;
     private JPanel jplRoot;
     private String kind_slected = "";
 
@@ -25,7 +25,7 @@ public class changeview_controller extends DanhMucBean {
         this.jplRoot = jplRoot;
     }
 
-    public void setview(JLabel jliteam) {
+    public void setview(JLabel jliteam ,JPanel jpl) {
         kind_slected = "TrangChu";
 
         jliteam.setBackground(Color.red);
@@ -117,6 +117,17 @@ public class changeview_controller extends DanhMucBean {
 
             }
 //            throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        }
+        private void setChangeBackground(String kind) {
+            for (DanhMucBean i : danhMuc) {
+                if (i.getKind().equalsIgnoreCase(kind)) {
+                    i.getJlb().setBackground(new Color(39, 43, 48));
+                    i.getJlb().setBackground(new Color(39, 43, 48));
+                } else {
+                    i.getJlb().setBackground(new Color(26, 29, 31));
+                    i.getJlb().setBackground(new Color(26, 29, 31));
+                }
+            }
         }
 
     }
