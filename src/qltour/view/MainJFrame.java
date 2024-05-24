@@ -22,7 +22,7 @@ public class MainJFrame extends javax.swing.JFrame {
         initComponents();
         setTitle("Manager Tour");
         changeview_controller controller = new changeview_controller(jpnview);
-        controller.setview(jlbmenu);
+        controller.setview(jlbmenu,jpnMenu);
         ArrayList<DanhMucBean> list = new ArrayList<>();
         list.add(new DanhMucBean(jlbmenu,"TrangChu"));
         list.add(new DanhMucBean(jlbtour, "Tour"));
